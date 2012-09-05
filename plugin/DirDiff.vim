@@ -200,24 +200,24 @@ command! -nargs=0 DirDiffUpdate call <SID>DirDiffUpdate ()
 command! -nargs=0 DirDiffQuit call <SID>DirDiffQuit ()
 
 if !hasmapto('<Plug>DirDiffGet')
-  map <unique> <Leader>dg <Plug>DirDiffGet
+  map <Leader>dg <Plug>DirDiffGet
 endif
 if !hasmapto('<Plug>DirDiffPut')
-  map <unique> <Leader>dp <Plug>DirDiffPut
+  map <Leader>dp <Plug>DirDiffPut
 endif
 if !hasmapto('<Plug>DirDiffNext')
-  map <unique> <Leader>dj <Plug>DirDiffNext
+  map <Leader>dj <Plug>DirDiffNext
 endif
 if !hasmapto('<Plug>DirDiffPrev')
-  map <unique> <Leader>dk <Plug>DirDiffPrev
+  map <Leader>dk <Plug>DirDiffPrev
 endif
 
 " Global Maps:
-map <unique> <script> <Plug>DirDiffGet    :diffget<CR>
-map <unique> <script> <Plug>DirDiffPut    :diffput<CR>
-map <unique> <script> <Plug>DirDiffNext    :call <SID>DirDiffNext()<CR>
-map <unique> <script> <Plug>DirDiffPrev    :call <SID>DirDiffPrev()<CR>
-map <unique> <script> <Plug>DirDiffQuit    :call <SID>DirDiffQuit()<CR>
+map <script> <Plug>DirDiffGet    :diffget<CR>
+map <script> <Plug>DirDiffPut    :diffput<CR>
+map <script> <Plug>DirDiffNext    :call <SID>DirDiffNext()<CR>
+map <script> <Plug>DirDiffPrev    :call <SID>DirDiffPrev()<CR>
+map <script> <Plug>DirDiffQuit    :call <SID>DirDiffQuit()<CR>
 
 " Default Variables.  You can override these in your global variables
 " settings.
@@ -295,7 +295,7 @@ let s:DirDiffBLine = 2
 " Desc: 
 " ------------------------------------------------------------------ 
 
-function s:DirDiffOpenWindow ( diff_title ) " <<<
+function! s:DirDiffOpenWindow ( diff_title ) " <<<
     " open and goto search window first
     let df_winnr = bufwinnr(a:diff_title)
     if df_winnr == -1 " open window
