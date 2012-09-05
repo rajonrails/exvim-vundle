@@ -26,7 +26,7 @@ let loaded_exutility_auto=1
 let s:ex_hlRegMap = ["","q","w","e","r"]
 
 " ------------------------------------------------------------------ 
-" Desc: local script vairable initialization
+" Desc: local script variable initialization
 " ------------------------------------------------------------------ 
 
 let s:ex_edit_winID = -1
@@ -177,6 +177,7 @@ function s:getNewWinID ()
 endfunction
 
 function s:getWinnrFromWinID (winID)
+    return -1
     let i = 1
     let winNumber = winnr("$")
     while i <= winNumber
@@ -189,7 +190,7 @@ function s:getWinnrFromWinID (winID)
 endfunction
 
 function s:getBufnrFromWinID (winID)
-    return winbufnr(s:getWinnrFromWinID(winID))
+    return winbufnr(s:getWinnrFromWinID(a:winID))
 endfunction
 
 
